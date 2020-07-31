@@ -21,10 +21,10 @@ General:
     #  - file: A production file-based ledger.
     LedgerType: file
 
-    # Listen address: The IP on which to bind to listen.
+    # Listen address: The IP on which to bind to listen. *SQJOWEIJOIER*
     ListenAddress: 127.0.0.1
 
-    # Listen port: The port on which to bind to listen.
+    # Listen port: The port on which to bind to listen. *SQJOWEIJOIER*
     ListenPort: 7050
 
     # TLS: TLS settings for the GRPC server.
@@ -105,7 +105,7 @@ General:
     # ID of one of the organizations defined in the orderer system channel's
     # /Channel/Orderer configuration. The sample organization defined in the
     # sample configuration provided has an MSP ID of "SampleOrg".
-    LocalMSPID: SampleOrg
+    LocalMSPID: OrdererMSP
 
     # Enable an HTTP service for Go "pprof" profiling as documented at:
     # https://golang.org/pkg/net/http/pprof

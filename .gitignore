@@ -9,3 +9,4 @@
 .idea
 
 ./chaincode/vender/
+/bin/*

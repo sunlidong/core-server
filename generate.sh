@@ -5,6 +5,10 @@
 ## 通道名称
 CHANNEL_NAME="swanbychannel"
 
+### 生成证书 
+cryptogen generate --config=./crypto-config.yaml
+
+
 ## 生成创世块配置文件
 configtxgen -profile SWANMultiNodeEtcdRaft   -channelID testchainid  -outputBlock  ./channel-artifacts/genesis.block
 if [ "$?" -ne 0 ]; then

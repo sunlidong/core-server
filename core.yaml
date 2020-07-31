@@ -13,11 +13,11 @@ peer:
     # The Peer id is used for identifying this Peer instance.
     id: jdoe
 
-    # The networkId allows for logical seperation of networks
+    # The networkId allows for logical seperation of networks *SUNLIDONG*
     networkId: dev
 
     # The Address at local network interface this Peer will listen on.
-    # By default, it will listen on all network interfaces
+    # By default, it will listen on all network interfaces  *SUNLIDONG*
     listenAddress: 0.0.0.0:7051
 
     # The endpoint this peer uses to listen for inbound chaincode connections.
@@ -34,8 +34,8 @@ peer:
     # When used as peer config, this represents the endpoint to other peers
     # in the same organization. For peers in other organization, see
     # gossip.externalEndpoint for more info.
-    # When used as CLI config, this means the peer's endpoint to interact with
-    address: 0.0.0.0:7051
+    # When used as CLI config, this means the peer's endpoint to interact with *SUNLIDONG*
+    address: 0.0.0.0:7051  
 
     # Whether the Peer should programmatically determine its address
     # This case is useful for docker containers.
@@ -78,8 +78,8 @@ peer:
         # This is a list of other peers that this peer reaches out to at startup.
         # Important: The endpoints here have to be endpoints of peers in the same
         # organization, because the peer would refuse connecting to these endpoints
-        # unless they are in the same organization as the peer.
-        bootstrap: 127.0.0.1:7051
+        # unless they are in the same organization as the peer. *SUNLIDONG*
+        bootstrap: 127.0.0.1:7051 
 
         # NOTE: orgLeader and useLeaderElection parameters are mutual exclusive.
         # Setting both to true would result in the termination of the peer
@@ -298,7 +298,7 @@ peer:
             FileKeyStore:
                 KeyStore:
 
-    # Path on the file system where peer will find MSP local configurations
+    # Path on the file system where peer will find MSP local configurations  *SUNLIDONG*
     mspConfigPath: msp
 
     # Identifier of the local MSP
@@ -307,7 +307,7 @@ peer:
     # In particular, the name of the local MSP ID of a peer needs
     # to match the name of one of the MSPs in each of the channel
     # that this peer is a member of. Otherwise this peer's messages
-    # will not be identified as valid by other nodes.
+    # will not be identified as valid by other nodes. *SUNLIDONG*
     localMspId: Org1MSP
 
     # CLI common client config options
