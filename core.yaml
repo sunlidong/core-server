@@ -20,6 +20,8 @@ peer:
     # By default, it will listen on all network interfaces
     listenAddress: 0.0.0.0:7051
 
+    chaincodeListenAddress: 0.0.0.0:7052
+
     # The endpoint this peer uses to listen for inbound chaincode connections.
     # If this is commented-out, the listen address is selected to be
     # the peer's address (see below) with port 7052
