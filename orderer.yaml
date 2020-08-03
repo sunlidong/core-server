@@ -29,13 +29,13 @@ General:
 
     # TLS: TLS settings for the GRPC server.
     TLS:
-        Enabled: false
+        Enabled: true
         # PrivateKey governs the file location of the private key of the TLS certificate.
-        PrivateKey: tls/server.key
+        PrivateKey: /root/ldsun/core-server/crypto-config/ordererOrganizations/swan.com/orderers/orderer1.swan.com/tls/server.key
         # Certificate governs the file location of the server TLS certificate.
-        Certificate: tls/server.crt
+        Certificate: /root/ldsun/core-server/crypto-config/ordererOrganizations/swan.com/orderers/orderer1.swan.com/tls/server.crt
         RootCAs:
-          - tls/ca.crt
+          - /root/ldsun/core-server/crypto-config/ordererOrganizations/swan.com/orderers/orderer1.swan.com/tls/ca.crt
         ClientAuthRequired: false
         ClientRootCAs:
     # Keepalive settings for the GRPC server.
@@ -58,9 +58,9 @@ General:
         SendBufferSize: 10
         # ClientCertificate governs the file location of the client TLS certificate
         # used to establish mutual TLS connections with other ordering service nodes.
-        ClientCertificate:
+        ClientCertificate: /root/ldsun/core-server/crypto-config/ordererOrganizations/swan.com/orderers/orderer1.swan.com/server.key
         # ClientPrivateKey governs the file location of the private key of the client TLS certificate.
-        ClientPrivateKey:
+        ClientPrivateKey: /root/ldsun/core-server/crypto-config/ordererOrganizations/swan.com/orderers/orderer1.swan.com/tls/server.crt
         # The below 4 properties should be either set together, or be unset together.
         # If they are set, then the orderer node uses a separate listener for intra-cluster
         # communication. If they are unset, then the general orderer listener is used.
@@ -93,19 +93,19 @@ General:
     # Genesis file: The file containing the genesis block to use when
     # initializing the orderer system channel and GenesisMethod is set to
     # "file". Ignored if GenesisMethod is set to "provisional".
-    GenesisFile: genesisblock
+    GenesisFile: /root/ldsun/core-server/channel-artifacts/genesisblock
 
     # LocalMSPDir is where to find the private crypto material needed by the
     # orderer. It is set relative here as a default for dev environments but
     # should be changed to the real location in production.
-    LocalMSPDir: msp
+    LocalMSPDir: /root/ldsun/core-server/crypto-config/ordererOrganizations/swan.com/orderers/orderer1.swan.com/msp
 
     # LocalMSPID is the identity to register the local MSP material with the MSP
     # manager. IMPORTANT: The local MSP ID of an orderer needs to match the MSP
     # ID of one of the organizations defined in the orderer system channel's
     # /Channel/Orderer configuration. The sample organization defined in the
     # sample configuration provided has an MSP ID of "SampleOrg".
-    LocalMSPID: SampleOrg
+    LocalMSPID: OrdererMSP
 
     # Enable an HTTP service for Go "pprof" profiling as documented at:
     # https://golang.org/pkg/net/http/pprof
@@ -154,7 +154,7 @@ FileLedger:
     # Location: The directory to store the blocks in.
     # NOTE: If this is unset, a new temporary location will be chosen every time
     # the orderer is restarted, using the prefix specified by Prefix.
-    Location: /var/hyperledger/production/orderer
+    Location: /var/hyperledger/production/orderer1
 
     # The prefix to use when generating a ledger directory in temporary space.
     # Otherwise, this value is ignored.
@@ -345,7 +345,7 @@ Metrics:
       Network: udp
 
       # the statsd server address
-      Address: 127.0.0.1:8125
+      Address: 127.0.0.1:8126
 
       # The interval at which locally cached counters and gauges are pushed
       # to statsd; timings are pushed immediately
