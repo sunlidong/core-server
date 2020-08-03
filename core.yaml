@@ -11,33 +11,33 @@
 peer:
 
     # The Peer id is used for identifying this Peer instance.
-    id: peer0.org1.swan.com
+    id: peer1.org1.swan.com
 
     # The networkId allows for logical seperation of networks
     networkId: dev
 
     # The Address at local network interface this Peer will listen on.
     # By default, it will listen on all network interfaces
-    listenAddress: 0.0.0.0:7051
+    listenAddress: 0.0.0.0:8051
 
-    chaincodeListenAddress: 0.0.0.0:7052
+    chaincodeListenAddress: 0.0.0.0:8052
 
     # The endpoint this peer uses to listen for inbound chaincode connections.
     # If this is commented-out, the listen address is selected to be
-    # the peer's address (see below) with port 7052
-    # chaincodeListenAddress: 0.0.0.0:7052
+    # the peer's address (see below) with port 8052
+    # chaincodeListenAddress: 0.0.0.0:8052
 
     # The endpoint the chaincode for this peer uses to connect to the peer.
     # If this is not specified, the chaincodeListenAddress address is selected.
     # And if chaincodeListenAddress is not specified, address is selected from
     # peer listenAddress.
-    # chaincodeAddress: 0.0.0.0:7052
+    # chaincodeAddress: 0.0.0.0:8052
 
     # When used as peer config, this represents the endpoint to other peers
     # in the same organization. For peers in other organization, see
     # gossip.externalEndpoint for more info.
     # When used as CLI config, this means the peer's endpoint to interact with
-    address: 0.0.0.0:7051
+    address: 0.0.0.0:8051
 
     # Whether the Peer should programmatically determine its address
     # This case is useful for docker containers.
@@ -81,7 +81,7 @@ peer:
         # Important: The endpoints here have to be endpoints of peers in the same
         # organization, because the peer would refuse connecting to these endpoints
         # unless they are in the same organization as the peer.
-        bootstrap: 127.0.0.1:7051
+        bootstrap: 127.0.0.1:8051
 
         # NOTE: orgLeader and useLeaderElection parameters are mutual exclusive.
         # Setting both to true would result in the termination of the peer
@@ -157,7 +157,7 @@ peer:
         reconnectInterval: 25s
         # This is an endpoint that is published to peers outside of the organization.
         # If this isn't set, the peer will not be known to other organizations.
-        externalEndpoint: 127.0.0.1:7051
+        externalEndpoint: 127.0.0.1:8051
         # Leader election service configuration
         election:
             # Longest time peer waits for stable membership during leader election startup (unit: second)
@@ -239,18 +239,18 @@ peer:
         clientAuthRequired: false
         # X.509 certificate used for TLS server
         cert:
-            file: /root/ldsun/core-server/crypto-config/peerOrganizations/org1.swan.com/peers/peer0.org1.swan.com/tls/server.crt
+            file: /root/ldsun/core-server/crypto-config/peerOrganizations/org1.swan.com/peers/peer1.org1.swan.com/tls/server.crt
         # Private key used for TLS server (and client if clientAuthEnabled
         # is set to true
         key:
-            file: /root/ldsun/core-server/crypto-config/peerOrganizations/org1.swan.com/peers/peer0.org1.swan.com/tls/server.key
+            file: /root/ldsun/core-server/crypto-config/peerOrganizations/org1.swan.com/peers/peer1.org1.swan.com/tls/server.key
         # Trusted root certificate chain for tls.cert
         rootcert:
-            file: /root/ldsun/core-server/crypto-config/peerOrganizations/org1.swan.com/peers/peer0.org1.swan.com/tls/ca.crt
+            file: /root/ldsun/core-server/crypto-config/peerOrganizations/org1.swan.com/peers/peer1.org1.swan.com/tls/ca.crt
         # Set of root certificate authorities used to verify client certificates
         clientRootCAs:
             files:
-              - /root/ldsun/core-server/crypto-config/peerOrganizations/org1.swan.com/peers/peer0.org1.swan.com/tls/ca.crt
+              - /root/ldsun/core-server/crypto-config/peerOrganizations/org1.swan.com/peers/peer1.org1.swan.com/tls/ca.crt
         # Private key used for TLS when making client connections.  If
         # not set, peer.tls.key.file will be used instead
         clientKey:
@@ -301,7 +301,7 @@ peer:
                 KeyStore:
 
     # Path on the file system where peer will find MSP local configurations
-    mspConfigPath: /root/ldsun/core-server/crypto-config/peerOrganizations/org1.swan.com/peers/peer0.org1.swan.com/msp
+    mspConfigPath: /root/ldsun/core-server/crypto-config/peerOrganizations/org1.swan.com/peers/peer1.org1.swan.com/msp
 
     # Identifier of the local MSP
     # ----!!!!IMPORTANT!!!-!!!IMPORTANT!!!-!!!IMPORTANT!!!!----
@@ -345,7 +345,7 @@ peer:
         # The interface and port on which the admin server will listen on.
         # If this is commented out, or the port number is equal to the port
         # of the peer listen address - the admin service is attached to the
-        # peer's service (defaults to 7051).
+        # peer's service (defaults to 8051).
         #listenAddress: 0.0.0.0:7055
 
     # Handlers defines custom handlers that can filter and mutate
