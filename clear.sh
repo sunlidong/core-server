@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+################################################################
+
+rm -rf crypto-config/
+rm -rf channel-artifacts/*
+
 ### 删除镜像以及容器
 docker rm $(docker ps -aq)
 docker rmi $(docker images dev-* -q)
